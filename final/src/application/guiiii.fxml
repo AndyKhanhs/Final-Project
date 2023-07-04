@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.GlyphsStack?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="52.0" prefWidth="798.0" style="-fx-background-color: #009fe5;">
+               <children>
+                  <HBox fillHeight="false" layoutX="595.0" layoutY="13.0" spacing="4.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="34.599999999999994" AnchorPane.topAnchor="13.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nguyễn">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <GlyphsStack prefHeight="30.0" prefWidth="15.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="CIRCLE" size="30" />
+                              <FontAwesomeIcon fill="#009fe5" glyphName="USER" size="22" />
+                           </children>
+                        </GlyphsStack>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SORT_DOWN" size="18" />
+                       
+                     </children>
+                  </HBox>
+                  <FontAwesomeIcon fill="WHITE" glyphName="BARS" layoutX="23.0" layoutY="34.0" size="24" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="13.428571701049805" />
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.18" orientation="VERTICAL" prefHeight="548.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="299.0" prefWidth="799.0" style="-fx-background-color: white;" SplitPane.resizableWithParent="false">
+                     <children>
+                        <Text fill="RED" layoutX="30.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IT" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="21.443359375">
+                           <font>
+                              <Font name=".VnTime" size="36.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="462.0" layoutY="70.0" mnemonicParsing="false" onAction="#showAddQuizWd" style="-fx-background-color: #009fe5;" text="TURN EDITING ON" textFill="WHITE" AnchorPane.bottomAnchor="8.400000000000006" AnchorPane.rightAnchor="14.800000000000068" />
+                        <HBox layoutX="30.0" layoutY="71.0" prefHeight="24.0" prefWidth="241.0" spacing="5.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="71.0">
+                           <children>
+                              <Label text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="/" />
+                              <Label text="My Courses">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="/" />
+                              <Label ellipsisString="" onMouseClicked="#openFirstPane" text="THI CUỐI KỲ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="738.0" layoutY="21.0" onMouseClicked="#openPopUpQuesBank" spacing="3.0" AnchorPane.rightAnchor="29.200000000000045" AnchorPane.topAnchor="21.0">
+                           <children>
+                              <FontAwesomeIcon fill="#009fe5" glyphName="COG" size="24" />
+                              <FontAwesomeIcon glyphName="SORT_DOWN" size="13" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <AnchorPane fx:id="tabAnchorPane" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                            <TabPane fx:id="tabPane" prefHeight="609.6" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <tabs>
+                                  <Tab fx:id="queTab" closable="false" text="Questions">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="799.0">
+                                             <children>
+                                                <Label layoutX="69.0" layoutY="28.0" text="Question bank" textFill="RED" AnchorPane.leftAnchor="69.0" AnchorPane.topAnchor="28.0">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="69.0" layoutY="76.0" text="Select a category: " />
+                                                <Label layoutX="69.0" layoutY="103.0" text="The default category for questions shared in context" />
+                                                <CheckBox fx:id="checkSubCategories" layoutX="69.0" layoutY="135.0" mnemonicParsing="false" onAction="#showSubCategories" text="Also show questions from subcategories" />
+                                                <CheckBox layoutX="69.0" layoutY="174.0" mnemonicParsing="false" text="Also show old questions" />
+                                                <Button layoutX="65.0" layoutY="217.0" mnemonicParsing="false" onAction="#createQuestion" style="-fx-background-color: #009fe5;" text="CREATE A NEW QUESTION..." textFill="WHITE" />
+                                                <ComboBox fx:id="comboboxCategory" layoutX="191.0" layoutY="71.0" prefHeight="28.0" prefWidth="191.0" />
+                                                <TableView fx:id="table" layoutX="65.0" layoutY="264.0" prefHeight="266.0" prefWidth="800.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="nameColumn" prefWidth="701.5999526977539" text="Question" />
+                                                    <TableColumn fx:id="actionColumn" prefWidth="100.0001220703125" text="Action" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab fx:id="catTab" closable="false" onSelectionChanged="#openCategoryAddWd" text="Categories">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane layoutX="44.0" layoutY="70.0" prefHeight="269.0" prefWidth="698.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.20001220703125" minWidth="10.0" prefWidth="231.19997558593752" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="487.4000244140625" minWidth="10.0" prefWidth="466.4000244140625" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="127.2" minHeight="10.0" prefHeight="120.7999755859375" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="49.60002441406249" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Parent category" GridPane.valignment="TOP" />
+                                                      <Label text="Name" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                                      <Label text="Category info" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                                      <Label text="ID number" GridPane.rowIndex="3" />
+                                                      <VBox fx:id="frameCbbCategory" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="44.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                                                         <GridPane.margin>
+                                                            <Insets left="20.0" />
+                                                         </GridPane.margin>
+                                                      </VBox>
+                                                      <TextField fx:id="categoryNameText" prefHeight="38.0" prefWidth="447.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets left="20.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <GridPane.margin>
+                                                            <Insets left="20.0" />
+                                                         </GridPane.margin>
+                                                      </TextArea>
+                                                      <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <GridPane.margin>
+                                                            <Insets left="20.0" />
+                                                         </GridPane.margin>
+                                                      </TextField>
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                                   </children>
+                                                </GridPane>
+                                                <HBox layoutX="30.0" layoutY="23.0" spacing="3.0">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" />
+                                                      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Add category">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <Button layoutX="296.0" layoutY="389.0" mnemonicParsing="false" onAction="#addCategoryToCbb" style="-fx-background-color: red;" text="ADD CATEGORY" textFill="WHITE" />
+                                                <Text layoutX="230.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are required fields in this form marked " />
+                                                <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" layoutX="503.0" layoutY="457.0" />
+                                                <Separator layoutX="44.0" layoutY="377.0" prefHeight="2.0" prefWidth="689.0" />
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab fx:id="imTab" closable="false" text="Import">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="799.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                                <Region layoutX="269.0" layoutY="228.0" prefHeight="176.0" prefWidth="414.0" style="-fx-border-color: grey;" />
+                                    <Text fill="RED" layoutX="27.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import questions from files">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Text>
+                                    <HBox layoutY="41.4638671875" spacing="5.0" />
+                                    <Text layoutX="272.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aiken format" />
+                                    <HBox layoutX="30.0" layoutY="109.0" spacing="5.0">
+                                       <children>
+                                          <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" text="" />
+                                          <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="General">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="30.0" layoutY="150.0" spacing="5.0">
+                                       <children>
+                                          <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" text="" />
+                                          <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Import questions from files">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text layoutX="40.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import" />
+                                    <Button layoutX="272.0" layoutY="186.0" mnemonicParsing="false" onAction="#chooseFileTxt" style="-fx-background-color: #009fe5;" text="CHOOSE A FILE" textFill="WHITE" />
+                                    <Button layoutX="272.0" layoutY="414.0" mnemonicParsing="false" style="-fx-background-color: red;" text="IMPORT" textFill="WHITE" />
+                                    <Text layoutX="249.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="There are required fields in this form marked" />
+                                    <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" layoutX="521.0" layoutY="525.0" text="" />
+                                    <Text layoutX="393.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum size for new files: 100MB" />
+                                    <VBox fx:id="dragAndDropFile" alignment="BOTTOM_CENTER" layoutX="284.0" layoutY="242.4638671875" prefHeight="146.0" prefWidth="386.0" style="-fx-border-color: grey; -fx-border-style: dashed;">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You can drag and drop files here to add them.">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <HBox layoutX="30.0" layoutY="66.0" spacing="5.0">
+                                       <children>
+                                          <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" text="" />
+                                          <Text fill="RED" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File format">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" layoutX="249.0" layoutY="190.0" text="" />
+                                                <Separator layoutX="40.0" layoutY="97.0" prefHeight="2.0" prefWidth="608.0" />
+                                                <Separator layoutX="40.0" layoutY="137.0" prefHeight="2.0" prefWidth="608.0" />
+                                 </children>
+                              </AnchorPane> 
+                                      </content>
+                                    </Tab>
+                                    <Tab fx:id="exTab" closable="false" text="Export">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="createQuestionWd" minHeight="0.0" minWidth="0.0" prefHeight="609.6" prefWidth="799.2" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane prefHeight="609.6" prefWidth="998.4" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="903.0" prefWidth="990.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <GridPane layoutX="24.0" layoutY="76.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="654.0" prefWidth="852.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.5999755859375" minWidth="10.0" prefWidth="152.800048828125" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="603.0" minWidth="10.0" prefWidth="597.599951171875" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="145.79999389648438" minHeight="0.0" prefHeight="33.0000244140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="443.4" minHeight="0.0" prefHeight="36.80001220703124" valignment="TOP" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="584.8" minHeight="10.0" prefHeight="35.400033569335946" valignment="TOP" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="723.2000152587891" minHeight="0.0" prefHeight="165.20004882812503" valignment="TOP" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="923.1999908447267" minHeight="10.0" prefHeight="386.799951171875" valignment="TOP" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <HBox alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                             <children>
+                                                <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                                   <children>
+                                                      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="General">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Category" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question Name" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question Text" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Default Mark" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </Text>
+                                          <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="60.0" />
+                                             </GridPane.margin>
+                                          </TextArea>
+                                          <TextField fx:id="questionName" style="-fx-text-box-border: grey;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="60.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="40.0" />
+                                             </GridPane.margin>
+                                          </FontAwesomeIcon>
+                                          <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="40.0" />
+                                             </GridPane.margin>
+                                          </FontAwesomeIcon>
+                                                <ScrollPane prefHeight="317.0" prefWidth="602.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets top="40.0" />
+                                                   </GridPane.margin>
+                                                   <content>
+                                                <VBox fx:id="frameAnswers" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="317.0" prefWidth="602.0" spacing="20.0" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="60.0" />
+                                                   </GridPane.margin>
+                                                </ComboBox>
+                                                <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets left="40.0" />
+                                                   </GridPane.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="74.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets left="60.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Button layoutX="309.0" layoutY="744.0" mnemonicParsing="false" onAction="#blankMoreChoice" style="-fx-background-color: #009fe5;" text="BLANKS FOR 3 MORE QUESTIONS" textFill="WHITE" />
+                                    <Button fx:id="btnSaveAndEdit" layoutX="309.0" layoutY="788.0" mnemonicParsing="false" onAction="#saveAndEdit" style="-fx-background-color: #009fe5;" text="SAVE CHANGES AND CONTINUE EDITING" textFill="WHITE" visible="false" />
+                                    <Button layoutX="309.0" layoutY="832.0" mnemonicParsing="false" onAction="#saveChanges" style="-fx-background-color: RED;" text="SAVE CHANGES" textFill="WHITE" />
+                                    <Button layoutX="432.0" layoutY="832.0" mnemonicParsing="false" onAction="#cancelEdit" style="-fx-background-color: #009fe5;" text="CANCEL" textFill="WHITE" />
+                                          <Label fx:id="modeLabel" layoutX="22.0" layoutY="17.0" prefHeight="18.0" prefWidth="438.0" textFill="RED">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                        <AnchorPane fx:id="firstAnchorPane" prefHeight="609.6" prefWidth="799.2" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox fx:id="vboxQuiz" layoutX="99.0" layoutY="42.0" prefHeight="536.0" prefWidth="456.0" spacing="20.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="QuizWd" prefHeight="609.6" prefWidth="799.2" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="32.0" layoutY="22.0" text="Thi giữa kỳ II môn Công nghệ" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="949.0" layoutY="19.0" onMouseClicked="#openSettingQuizWd" spacing="3.0">
+                                 <children>
+                                    <FontAwesomeIcon fill="#009fe5" glyphName="COG" size="18" />
+                                    <FontAwesomeIcon fill="#b94b4b" glyphName="SORT_DOWN" />
+                                 </children>
+                              </HBox>
+                              <Label fx:id="labelTimeL" layoutX="797.0" layoutY="74.0" prefHeight="18.0" prefWidth="164.0" />
+                              <Label layoutX="756.0" layoutY="93.0" text="Grading method: Last attempt" />
+                              <Label layoutX="32.0" layoutY="177.0" text="Summery of your previous attempts: " textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="774.0" layoutY="450.0" mnemonicParsing="false" onAction="#openChoicePreviewQuiz" style="-fx-background-color: #009fe5;" text="PREVIEW QUIZ NOW" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="quizAddWd" prefHeight="609.6" prefWidth="998.4" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                        <ScrollPane layoutX="166.0" layoutY="336.0" prefHeight="557.6" prefWidth="799.2" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="986.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <HBox layoutX="28.0" layoutY="21.0" spacing="3.0">
+                                       <children>
+                                          <GlyphsStack prefHeight="24.0" prefWidth="21.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#e3edef" glyphName="FILE" size="20" stroke="#0055ff" />
+                                                <FontAwesomeIcon fill="#ff3300" glyphName="CHECK" size="15" strikethrough="true" />
+                                             </children>
+                                          </GlyphsStack>
+                                          <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Adding a new Quiz ">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE">
+                                             <HBox.margin>
+                                                <Insets top="8.0" />
+                                             </HBox.margin>
+                                          </FontAwesomeIcon>
+                                       </children>
+                                    </HBox>
+                                    <GridPane layoutX="39.0" layoutY="91.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="246.0" prefWidth="750.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.20001220703125" minWidth="10.0" prefWidth="234.99999084472657" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="587.4000396728516" minWidth="10.0" prefWidth="515.0000091552735" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="44.000006103515624" minHeight="10.0" prefHeight="40.799993896484374" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="43.40001220703125" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="146.79998779296875" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <HBox spacing="3.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" />
+                                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="General">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <FontAwesomeIcon fill="RED" glyphName="EXCLAMATION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                          <TextField fx:id="quizNameText" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="418.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="117.0" prefWidth="495.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </TextArea>
+                                          <CheckBox mnemonicParsing="false" text="Display description on course page" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                             <GridPane.margin>
+                                                <Insets left="20.0" top="150.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                                             <GridPane.margin>
+                                                <Insets left="260.0" />
+                                             </GridPane.margin>
+                                          </FontAwesomeIcon>
+                                       </children>
+                                    </GridPane>
+                                    <Separator layoutX="46.0" layoutY="377.0" prefHeight="0.0" prefWidth="685.0" />
+                                    <GridPane layoutX="46.0" layoutY="395.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="220.0" prefWidth="736.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.46673583984375" minWidth="10.0" prefWidth="231.466650390625" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.3333435058594" minWidth="10.0" prefWidth="505.333349609375" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Close the quiz" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Open the quiz" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time limit" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="When time expires" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <HBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets top="6.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="21" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="March" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="2023" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="15" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="57" />
+                                                <FontAwesomeIcon fill="#2596be" glyphName="CALENDAR" />
+                                                <CheckBox mnemonicParsing="false" text="Enable" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets top="6.0" />
+                                                   </HBox.margin>
+                                                </FontAwesomeIcon>
+                                                <TextField fx:id="timeLimitText" prefHeight="26.0" prefWidth="52.0" promptText="0" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="Minutes" />
+                                                      <CheckBox mnemonicParsing="false" text="Enable" />
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="3.0">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2596be" glyphName="SORT_DOWN" />
+                                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Timing">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="3.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="Open attemps are submitted automatically" />
+                                             </children>
+                                          </HBox>
+                                          <Button mnemonicParsing="false" onAction="#addQuizToVbox" style="-fx-background-color: #2596BE;" text="CREATE" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets left="20.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#cancelAddQuiz" style="-fx-background-color: RED;" text="CANCEL" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets left="100.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                                <HBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="QUESTION_CIRCLE" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="6.0" />
+                                                         </HBox.margin>
+                                                      </FontAwesomeIcon>
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="21" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="March" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="2023" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="15" />
+                                                      <MenuButton mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: grey;" text="57" />
+                                                      <FontAwesomeIcon fill="#2596be" glyphName="CALENDAR" />
+                                                      <CheckBox mnemonicParsing="false" text="Enable" />
+                                                   </children>
+                                                </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="settingQuizWd" prefHeight="609.6" prefWidth="799.2" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tableAddQuestionToo" layoutX="42.0" layoutY="224.0" prefHeight="371.0" prefWidth="876.0">
+                                <columns>
+                                  <TableColumn fx:id="nameQuesTableAddToo" prefWidth="875.2000045776367" text="Question" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="42.0" layoutY="36.0" text="Editting quiz: Thi cuối kỳ II môn Công nghệ" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="numQuestQuiz" layoutX="49.0" layoutY="80.0" text="Question: 0" />
+                              <Label layoutX="123.0" layoutY="80.0" text="|  This quiz is open" />
+                              <Label layoutX="672.0" layoutY="88.0" text="Maximum grade: " />
+                              <TextField layoutX="774.0" layoutY="85.0" prefHeight="26.0" prefWidth="78.0" text="10.0" />
+                              <Button layoutX="872.0" layoutY="81.0" mnemonicParsing="false" onAction="#saveEditQuestion" style="-fx-background-color: #009fe5;" text="Save" textFill="WHITE" AnchorPane.rightAnchor="72.79999999999998" />
+                              <Button layoutX="42.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: #009fe5;" text="REPAGINATE" textFill="WHITE" />
+                              <Button layoutX="149.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: #009fe5;" text="SELECT MULTIPLE ITEMS" textFill="WHITE" />
+                              <Label fx:id="sumMarkQuestQuiz" layoutX="794.0" layoutY="134.0" text="Total of marks: 0.00" AnchorPane.rightAnchor="85.19999999999997" />
+                              <HBox layoutX="881.0" layoutY="201.0" onMouseClicked="#openOrCloseChoiceAdd" spacing="3.0" AnchorPane.rightAnchor="82.19999999999997">
+                                 <children>
+                                    <Label text="Add" textFill="#009fe5" />
+                                    <FontAwesomeIcon fill="#009fe5" glyphName="SORT_DOWN" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="choiceAddQuiz" layoutX="774.0" layoutY="219.0" prefHeight="55.0" prefWidth="142.0" style="-fx-background-color: #f5f5f5;" visible="false" AnchorPane.rightAnchor="81.99999999999997">
+                                 <children>
+                                    <Label graphicTextGap="7.0" prefHeight="18.0" prefWidth="124.0" text="A new question" textAlignment="CENTER">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#009fe5" glyphName="PLUS" />
+                                       </graphic>
+                                    </Label>
+                                    <Label graphicTextGap="7.0" onMouseClicked="#openAddFromQuestionBankWd" prefHeight="18.0" prefWidth="144.0" text="From question bank">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#009fe5" glyphName="PLUS" />
+                                       </graphic>
+                                    </Label>
+                                    <Label graphicTextGap="7.0" onMouseClicked="#openAddFromQuestionBankRandomWd" prefHeight="18.0" prefWidth="135.0" text="A random question">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#009fe5" glyphName="PLUS" />
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="previewQuizWd" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1000.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox layoutX="947.0" layoutY="75.0" AnchorPane.rightAnchor="48.200000000000045">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="37.0" prefWidth="303.0" style="-fx-border-color: lightgrey;" text="Quiz navigation" textAlignment="CENTER" textFill="RED" />
+                                    <FlowPane fx:id="flowPaneWrapButton" prefHeight="123.0" prefWidth="303.0" />
+                                 </children>
+                              </VBox>
+                              <ScrollBar fx:id="scrBarQuiz" layoutX="973.0" layoutY="-6.0" orientation="VERTICAL" prefHeight="610.0" prefWidth="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <VBox fx:id="vBoxLabelAndContent" layoutX="49.0" layoutY="136.0" prefHeight="200.0" prefWidth="1060.0" spacing="5.0" />
+                              <GridPane fx:id="timeAndMark" layoutX="48.0" layoutY="95.0" prefHeight="106.0" prefWidth="1060.0" style="-fx-background-color: white;" visible="false" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="525.199951171875" minWidth="10.0" prefWidth="110.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="978.8000793457031" minWidth="10.0" prefWidth="946.800048828125" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafafa;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7;" GridPane.rowIndex="4" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;" GridPane.rowIndex="3" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7;" GridPane.rowIndex="2" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f0f0f0;" GridPane.rowIndex="1" />
+                                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Time taken" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="State" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Marks" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Finished" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafafa;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <HBox fx:id="hhb" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </HBox>
+                                    <Label fx:id="lb1" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="lb2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="5" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                 </children>
+                              </GridPane>
+                              <HBox fx:id="wrapCountdownTime" alignment="CENTER" layoutX="888.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="20.0" prefWidth="132.0" style="-fx-border-color: red; -fx-background-color: white;" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="63.0">
+                                 <children>
+                                    <Label fx:id="hourCountdownLabel" text="Label" />
+                                    <Label text=":" />
+                                    <Label fx:id="minuteCountdownLabel" text="Label" />
+                                    <Label text=":" />
+                                    <Label fx:id="secondCountdownLabel" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="confirmPane" opacity="0.69" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: grey;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="confirmAnchor" layoutX="280.0" layoutY="236.0" prefHeight="200.0" prefWidth="415.0" style="-fx-background-color: white;" visible="false" AnchorPane.leftAnchor="500.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Confirmation" textFill="RED">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutY="53.0" prefHeight="3.0" prefWidth="408.0" />
+            <Label layoutX="14.0" layoutY="56.0" prefHeight="82.0" prefWidth="391.0" text="Once you submit, you will no longer be able to change your answers for this attempt." wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitButton" layoutX="23.0" layoutY="143.0" mnemonicParsing="false" style="-fx-background-color: #009fe5;" text="Submit all and finish" textFill="WHITE" />
+            <Button layoutX="211.0" layoutY="143.0" mnemonicParsing="false" onAction="#cancelSubmit" style="-fx-background-color: #f5f5f5; -fx-text-fill: black;" text="Cancel" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addFromQuestionBankWd" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: WHITE;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="30.0" layoutY="31.0" text="Add from the quetion bank at the end" textFill="RED">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon glyphName="CLOSE" layoutX="959.0" layoutY="36.0" onMouseClicked="#closeAddFromQuestionBankWd" />
+            <Label layoutX="46.0" layoutY="95.0" text="Select a category" />
+            <ComboBox fx:id="cbbCategoryAddQues" layoutX="164.0" layoutY="90.0" prefWidth="150.0" />
+            <Label layoutX="46.0" layoutY="139.0" style="-fx-text-fill: #009fe5;" text="Search options" textFill="#009fe5" />
+            <FontAwesomeIcon fill="#009fe5" glyphName="SORT_DOWN" layoutX="144.0" layoutY="153.0" />
+            <CheckBox fx:id="checkSubCategoriesToo" layoutX="51.0" layoutY="167.0" mnemonicParsing="false" onAction="#showSubCategoriesToo" text="Also show questions from subcategories" />
+            <CheckBox layoutX="48.0" layoutY="196.0" mnemonicParsing="false" text="Also show old questions" />
+            <HBox fx:id="numRandomHbox" layoutX="53.0" layoutY="250.0" prefHeight="42.0" prefWidth="374.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="190.0" text="Number of random questions" />
+                  <ComboBox fx:id="cbbNumRandom" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableAddQuestion" layoutX="40.0" layoutY="308.0" prefHeight="439.0" prefWidth="842.0">
+              <columns>
+                <TableColumn fx:id="nameQuesTableAdd" prefWidth="743.2000122070312" text="Question" />
+              </columns>
+            </TableView>
+            <Button layoutX="56.0" layoutY="761.0" mnemonicParsing="false" onAction="#addSelectedQuestion" style="-fx-background-color: #009FE5;" text="ADD SELECTED QUESTIONS TO THE QUIZ" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="choicePreviewQuiz" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: grey;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="100.0" layoutY="163.0" prefHeight="377.0" prefWidth="774.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+               <children>
+                  <Label layoutX="31.0" layoutY="13.0" prefHeight="54.0" prefWidth="242.0" text="Start attempt">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon glyphName="CLOSE" layoutX="744.0" layoutY="45.0" onMouseClicked="#closeChoicePreviewQuiz" size="24" text="" AnchorPane.rightAnchor="37.14285659790039" AnchorPane.topAnchor="24.428571701049805" />
+                  <Separator layoutX="31.0" layoutY="78.0" prefHeight="4.0" prefWidth="718.0" />
+                  <Label layoutX="67.0" layoutY="95.0" style="-fx-text-fill: red;" text="Time limit" textFill="RED">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="startLabel" layoutX="61.0" layoutY="163.0" prefHeight="98.0" prefWidth="679.0" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="47.0" layoutY="312.0" mnemonicParsing="false" onAction="#openPreviewQuiz" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: RED; -fx-font-size: 20px;" text="START ATTEMPT" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="273.0" layoutY="312.0" mnemonicParsing="false" onAction="#cancelChoicePreviewQuiz" style="-fx-background-color: #009FE5; -fx-font-size: 20px;" text="CANCEL" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="31.0" layoutY="284.0" prefHeight="4.0" prefWidth="718.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="popUpQuestionBank_Pane" layoutX="-175.0" layoutY="72.0" opacity="0.61" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="popUpQuestionBank" layoutX="123.0" layoutY="189.0" prefHeight="200.0" prefWidth="657.0" style="-fx-background-color: white;" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Text fill="#2390df" layoutX="61.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Question bank" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="41.1015625">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <VBox layoutX="413.0" layoutY="48.0" prefHeight="110.0" prefWidth="141.0" spacing="7.0" AnchorPane.rightAnchor="45.39999999999998" AnchorPane.topAnchor="48.0">
+               <children>
+                  <Text fill="#2390df" onMouseClicked="#openQuesTab" strokeType="OUTSIDE" strokeWidth="0.0" text="Questions">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2390df" onMouseClicked="#openCateTab" strokeType="OUTSIDE" strokeWidth="0.0" text="Categories">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2390df" onMouseClicked="#openImTab" strokeType="OUTSIDE" strokeWidth="0.0" text="Import">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2390df" onMouseClicked="#openExTab" strokeType="OUTSIDE" strokeWidth="0.0" text="Export">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <FontAwesomeIcon fill="#2596be" glyphName="CLOSE" layoutX="726.0" layoutY="18.0" onMouseClicked="#closePopUpQuesBank" size="18" AnchorPane.rightAnchor="9.857142448425293" AnchorPane.topAnchor="2.5714282989501953" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
