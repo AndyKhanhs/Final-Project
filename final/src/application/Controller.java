@@ -1,3 +1,4 @@
+
 package application;
 
 import java.io.BufferedReader;
@@ -1075,10 +1076,12 @@ public class Controller implements Initializable {
 		int j = quizList.get(orNumQuiz).getQuestionQuiz().size();
 		scrBarActive(j);
 		double dist=-1.0;
-		vBoxLabelAndContent.setPrefHeight(dist);		
+		vBoxLabelAndContent.setPrefHeight(dist);	
 		for(int i = 0 ; i < j;i++) {
 			Button b = new Button(Integer.toString(i+1));
 			flowPaneWrapButton.getChildren().add(b);
+			b.setStyle("-fx-background-color:white;"+"-fx-border-color:grey;");
+			b.setPrefWidth(37);
 			b.setOnAction(e->{
 				if(quizList.get(orNumQuiz).getQuestionQuiz().size()>=3) {
 					int ii = (Integer.parseInt(b.getText())-1)*200;
@@ -1122,6 +1125,10 @@ public class Controller implements Initializable {
 				RadioButton rdB = new RadioButton(a.getAlphabet());
 				rdB.setWrapText(true);
 				rdB.setToggleGroup(toggleGroup);
+				rdB.setOnAction(e->{
+					if (rdB.isSelected()) b.setStyle("-fx-background-color:lightgrey;"+"-fx-border-color:grey;");
+					
+				});
 				vBoxContent.getChildren().add(rdB);
 				if(a.getGrade()=="1") {
 					lbNameTrueAns.setText(a.getAlphabet());
@@ -1140,6 +1147,8 @@ public class Controller implements Initializable {
 			vBoxLabelAndContent.getChildren().add(wrapBox);
 			vBoxLabelAndContent.setSpacing(0);
 			toggleGroups.add(toggleGroup);
+			
+			
 			labelNameTrueAnswer.add(lbNameTrueAns);
 		}
 		btnFinish.setText("Finish attempt...");
@@ -1147,7 +1156,7 @@ public class Controller implements Initializable {
 		btnFinish.setAlignment(Pos.BASELINE_LEFT);
 		
 		flowPaneWrapButton.getChildren().add(btnFinish);
-		
+		flowPaneWrapButton.setStyle("-fx-border-color:lightgrey");
 		previewQuizWd.setVisible(true);
 		choicePreviewQuiz.setVisible(false);
 
