@@ -335,6 +335,10 @@ public class Controller implements Initializable {
 	@FXML
 	private Label labelTimeL;
 	@FXML
+	private Label labelQuizName=new Label("");
+	@FXML
+	private Label labelEditQuiz=new Label("");
+	@FXML
 	private Label startLabel;
 	private List<ToggleGroup> toggleGroups = new ArrayList<>();
 	private List<Label> labelNameTrueAnswer = new ArrayList<>();
@@ -941,6 +945,7 @@ public class Controller implements Initializable {
 			
 			//modeAddQuest="quiz";
 			QuizWd.setVisible(true);
+			labelQuizName.setText(nameQuiz);
 			labelTimeL.setText("Time limit: "+startTime/60+" minutes"); 
 			tableAddQuestionToo.setItems(quizList.get(orNumQuiz).getQuestionQuiz());
 			numQuestQuiz.setText("Question: "+quizList.get(orNumQuiz).getQuestionQuiz().size());
@@ -975,6 +980,7 @@ public class Controller implements Initializable {
 	}
 	public void openSettingQuizWd(MouseEvent event) {
 		settingQuizWd.setVisible(true);
+		labelEditQuiz.setText("Editting quiz: "+labelQuizName.getText());
 		tableAddQuestionToo.setItems(quizList.get(orNumQuiz).getQuestionQuiz());
 	}
 	public void closeSettingQuizWd(MouseEvent event) {

@@ -386,7 +386,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="QuizWd" prefHeight="609.6" prefWidth="799.2" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label layoutX="32.0" layoutY="22.0" text="Thi giữa kỳ II môn Công nghệ" textFill="RED">
+                              <Label fx:id="labelQuizName" layoutX="28.0" layoutY="22.0" prefHeight="35.0" prefWidth="576.0" textFill="RED">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
@@ -607,7 +607,7 @@
                                   <TableColumn fx:id="nameQuesTableAddToo" prefWidth="875.2000045776367" text="Question" />
                                 </columns>
                               </TableView>
-                              <Label layoutX="42.0" layoutY="36.0" text="Editting quiz: Thi cuối kỳ II môn Công nghệ" textFill="RED">
+                              <Label fx:id="labelEditQuiz" layoutX="42.0" layoutY="36.0" prefHeight="35.0" prefWidth="622.0" textFill="RED">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
