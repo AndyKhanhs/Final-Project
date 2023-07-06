@@ -1109,7 +1109,7 @@ public class Controller implements Initializable {
 			Label stateLabel=new Label("Not yet answered");
 			stateLabel.setPrefWidth(110);
 			stateLabel.setAlignment(Pos.CENTER);
-			vBoxLabel.getChildren().addAll(lbNumQuest,stateLabel,new  Label("Marked out of 1.00"),new Label("Flag question",GlyphsDude.createIcon(FontAwesomeIcons.FLAG,"12px")));
+			vBoxLabel.getChildren().addAll(lbNumQuest,stateLabel,new  Label(" Marked out of 1.00"),new Label(" Flag question",GlyphsDude.createIcon(FontAwesomeIcons.FLAG,"12px")));
 			VBox vBoxContent = new VBox();
 			vBoxContent.setPadding(new Insets(10, 10, 10, 10));
 			vBoxContent.setBackground(new Background(new BackgroundFill(Color.valueOf("#e7f3f5"), null, null)));
