@@ -1139,6 +1139,7 @@ public class Controller implements Initializable {
 						b.setStyle("-fx-background-color:lightgrey;"+"-fx-border-color:grey;");
 						stateLabel.setText("Answer saved");
 					}
+									
 				});
 				vBoxContent.getChildren().add(rdB);
 				if(a.getGrade()=="1") {
